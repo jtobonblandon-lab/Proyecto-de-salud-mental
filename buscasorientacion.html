@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>¿Buscas orientación Psicológica?</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="formulario.js"></script>
+</head>
+<body>
+  <header class="menu">
+    <nav aria-label="Menú principal">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="violenciadegenero.html">Violencia de Género</a></li>
+        <li><a href="violentometro.html">Violentómetro</a></li>
+        <li><a href="rutasdeapoyo.html">Rutas de Atención</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div class="card">
+  <main class="main">
+    <h1>¡Estas a tiempo! busca orientación y apoyo si sientes que lo necesitas y comparte esta información con quien creas que la necesite.</h1>
+    
+
+  <h2 class="form-title">Cuentas con nosotros, deja tus datos para contactarte</h2>
+
+  <div class="field">
+    <label for="nombre" class="label">Nombre Completo</label>
+    <input type="text" id="nombre" name="nombre" placeholder="Tu nombre y apellido" required minlength="3" />
+    <p class="hint" id="hint-nombre">Como aparece en tu documento.</p>
+  </div>
+  <div class="field">
+    <label for="nombre" class="label">Numero de contacto</label>
+    <input type="text" id="nombre" name="nombre" placeholder="Tu # de celular" required minlength="3" />
+    <p class="hint" id="hint-nombre">Como aparece en tu documento.</p>
+  </div>
+
+  <div class="field">
+    <label for="correo" class="label">Correo</label>
+    <input type="email" id="correo" name="correo" placeholder="tucorreo@ejemplo.com" required />
+    <p class="hint" id="hint-correo">Te contactaremos a este correo.</p>
+  </div>
+
+  <div class="field">
+    <label for="edad" class="label">Edad</label>
+    <input type="number" id="edad" name="edad" placeholder="Tu edad" required min="12" max="120" />
+  </div>
+
+  <div class="field">
+    <span class="label">Género</span>
+    <div class="option-group" role="radiogroup" aria-labelledby="genero-label" id="genero-group">
+      <label><input type="radio" name="genero" value="masculino" required /> Masculino</label>
+      <label><input type="radio" name="genero" value="femenino" /> Femenino</label>
+      <label><input type="radio" name="genero" value="otro" /> Otro</label>
+    </div>
+  </div>
+
+  <div class="field">
+    <label for="barrio" class="label">Barrio</label>
+    <select id="barrio" name="barrio" required>
+      <option value="" disabled selected>-- Selecciona --</option>
+      <option>Manrique</option>
+      <option>San Javier</option>
+      <option>Castilla</option>
+      <option>Bello</option>
+      <option>Itagüí</option>
+      <option>Envigado</option>
+    </select>
+  </div>
+
+  <div class="actions">
+    <button type="submit" class="btn-primary">Enviar información</button>
+    <button type="reset" class="btn-secondary">Limpiar</button>
+  </div>
+  </div>
+</div>
+</form>
+    </section>
+  </main>
+  <footer>
+    <small>&copy; 2025 Red de Apoyo | Todos los derechos reservados</small>
+  </footer>
+</body>
+</html>

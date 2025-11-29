@@ -1,0 +1,241 @@
+
+:root {
+  --color-principal: #6A1B9A;
+  --color-principal-hover: #5b138a;
+  --color-texto-oscuro: #333;
+  --color-alerta-amarilla: #FFFF66; /* ligeramente más legible */
+  --color-alerta-naranja: #FF9800;
+  --color-alerta-roja: #B22222;
+  --color-alerta-neutra: var(--color-principal);
+  --ancho-juego: 680px;
+  --ancho-max-contenido: 1100px;
+}
+
+/* Estructura general */
+
+/* Contenedor principal */
+#content-wrapper {
+  position: relative;          /* CLAVE: referencia para la imagen absoluta */
+  padding: 20px;
+  max-width: var(--ancho-max-contenido);
+  margin: 20px auto;
+}
+
+
+/* Card del juego/test */
+#juego-principal {
+  width: var(--ancho-juego);
+  min-height: 320px;
+  padding: 30px;
+  background: #ffffffb3;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  border: 2px solid var(--color-principal);
+  display: block;
+  overflow: hidden;
+
+}
+#juego-principal > h2 { text-align: center; margin: 0 0 .75rem; color: var(--color-principal); }
+#juego-principal > p { text-align: center; color: #4b5563; }
+
+#juego-container { display: none; flex-direction: column; gap: 1rem; width: 100%; }
+#pregunta-container {
+  min-height: 84px; padding: .9rem; border: 1px dashed #9ca3af; font-size: 1.15rem; display: flex; align-items: center; justify-content: center; text-align: center; font-weight: 700; border-radius: 10px; background: #fafafa;
+}
+.opciones { display: flex; justify-content: center; gap: 1rem; }
+.opciones button { padding: .7rem 1.5rem; cursor: pointer; border: 1px solid #000; border-radius: 10px; font-size: 1rem; font-weight: 700; transition: transform .1s ease-in-out; }
+#btn-si { background-color: #228B22; color: white; }
+#btn-no { background-color: #B22222; color: white; }
+.opciones button:active { transform: scale(0.98); }
+.btn-principal { display: inline-block; margin: .75rem auto; background: var(--color-principal); color: #fff; border: none; padding: .7rem 1rem; border-radius: 999px; font-weight: 700; }
+.btn-principal:hover { background-color: var(--color-principal-hover); opacity: 0.95; }
+
+#resultado-container { display: none; padding: 1rem; border-radius: 12px; font-weight: bold; font-size: 1.15rem; margin-top: 1rem; }
+.alerta { background-color: var(--color-alerta-amarilla); color: var(--color-texto-oscuro); }
+.reacciona { background-color: var(--color-alerta-naranja); color: white; }
+.urgente { background-color: var(--color-alerta-roja); color: white; }
+.nop { background-color: var(--color-alerta-neutra); color: white; }
+
+
+:root {
+  /* paleta de colores prinicpal */
+  --color-principal: #6A1B9A;
+  --color-princiapl-hover: #6A1B9A;
+  --color-texto-oscuro: #333;
+
+  /* Colores de Alerta/Violentómetro */
+  --color-alerta-amarilla: #FFFF00; /* Alerta */
+  --color-alerta-naranja: #FF9900; /* Reacciona */
+  --color-alerta-roja: #B22222; /* Urgente */
+  --color-alerta-neutra: var(--color-principal);
+
+  /* Dimensiones */
+  --ancho-juego: 600px;
+  --ancho-max-contenido: 1200px;
+}
+
+body {
+  /* 1. Limpia los márgenes predeterminados del navegador */
+  margin: 0; 
+  padding: 0,5; 
+  
+  /* 2. SOLUCIÓN CLAVE: Oculta la barra de desplazamiento vertical */
+  overflow-y: hidden;
+  
+  /* (Ya aplicado en el tema anterior) Asegura que el desplazamiento horizontal esté oculto */
+  overflow-x: hidden; 
+  height: auto;
+  width: auto;
+}
+
+/* Imagen del violentómetro: fija a la derecha */
+.imagen-violentometro {
+  position: absolute;
+  right: 0;          /* pegada al borde derecho */
+  bottom: 0;         /* opcional: pegada al borde inferior; cámbialo por top si la prefieres arriba */
+  width: 240px;      /* ajusta el tamaño deseado */
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+}
+
+  /* Tipografia y mensajes */
+
+  h2 {
+  color: var(--color-principal); 
+  margin-top: 0;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+#juego-principal > p {
+  /* Párrafo de instrucción */
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+
+/* Logica del juego */
+
+#juego-container { 
+  display: flex; 
+  flex-direction: column;
+  width: 100%;
+}
+
+#pregunta-container {
+  /* Caja donde se muestra la pregunta */
+  height: 80px;
+  padding: 15px;
+  border: 1px solid black; 
+  font-size: 1.2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 20px; 
+  font-weight: bold; 
+}
+
+/* Opciones SÍ/NO */
+.opciones {
+  text-align: center;
+  margin-top: 15px;
+  display: flex; 
+  justify-content: center;
+  gap: 20px;
+}
+
+.opciones button {
+          padding: 10px 25px;
+          margin: 0;
+          cursor: pointer;
+          border: 1px solid black; 
+          border-radius: 0; 
+          font-size: 1em;
+          font-weight: bold;
+          transition: background-color 0.3s;
+          flex: 1; 
+          max-width: 150px; 
+      }
+
+      #btn-si { background-color: #228B22; color: white; border-right: 1px solid #000}
+      #btn-no { background-color: #B22222; color: white}
+      
+      #btn-si:hover { background-color: #228B22; }
+      #btn-no:hover { background-color: #B22222; }
+
+/* ESTE BLOQUE DEBE MANTENERSE */
+.btn-principal:hover {
+  background-color: var(--color-princiapl-hover); 
+  opacity: 0.9;
+}
+
+/* Contenedor de Resultado */
+#resultado-container {
+  padding: 25px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1.3em;
+  margin-top: 20px;
+}
+
+
+/* RESULTADO (COLORES) */
+
+.alerta { 
+  background-color: var(--color-alerta-amarilla); 
+  color: var(--color-texto-oscuro); 
+}
+.reacciona { 
+  background-color: var(--color-alerta-naranja); 
+  color: white; 
+}
+.urgente { 
+  background-color: var(--color-alerta-roja); 
+  color: white; 
+}
+.nop {
+  background-color: var(--color-alerta-neutra); 
+  color: white;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.center-page {
+
+  position: absolute;
+  top: 90px; 
+  left: 80%;
+  transform: translateX(-60%);
+  width: 400px; 
+  height: auto;
+}
+
+/* MEDIA QUERIES */
+
+
+@media (max-width: 1050px) {
+  #juego-principal {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  /* La imagen ya no es absoluta en móvil; se ubica bajo el card y centrada */
+  .imagen-violentometro {
+    position: static;
+    display: block;
+    margin: 20px auto 0;
+    width: 260px;    /* tamaño móvil */
+    height: auto;
+  }
+    
+  }
+  .opciones {
+      /* Mantiene los botones Sí/No en fila */
+      flex-direction: row; 
+  }
+

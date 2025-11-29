@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Violentómetro</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles2.css" />
+  <script defer src="juego.js"></script>
+</head>
+<body>
+  <header class="menu">
+    <nav aria-label="Menú principal">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="violenciadegenero.html">Violencia de Género</a></li>
+        <li><a href="rutasdeapoyo.html">Rutas de Atención</a></li>
+        <li><a href="buscasorientacion.html">Orientación Psicológica</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="content-wrapper">
+    <section id="juego-principal" class="card" aria-labelledby="titulo-violentometro">
+      <h2 id="titulo-violentometro">Test Violentómetro</h2>
+      <p>Responde las preguntas para conocer tu nivel de riesgo.</p>
+      <button id="btn-iniciar" class="btn-principal">Iniciar Test</button>
+      <div id="juego-container" role="group" aria-label="Preguntas">
+        <div id="pregunta-container" aria-live="polite"></div>
+        <div class="opciones">
+          <button id="btn-si" type="button">Sí</button>
+          <button id="btn-no" type="button">No</button>
+        </div>
+      </div>
+      <div id="resultado-container" aria-live="polite"></div>
+      <button id="btn-reiniciar" class="btn-principal" type="button">Reiniciar</button>
+    </section>
+    <br>
+    <div class="center-page">
+    <object data="imagenes/Violentometro.png" type="image/png" width=300" height="300" ></object>
+  </div>
+   </main>
+   <footer>
+    <small>&copy; 2025 Red de Apoyo | Todos los derechos reservados</small>
+  </footer>
+    </div>
+    
+</body>
+</html>
